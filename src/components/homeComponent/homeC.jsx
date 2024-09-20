@@ -1,7 +1,7 @@
 import React from 'react'
-import jobCard from './jobCard'
+import JobCard from './jobCard'
 
-export default function homeC() {
+export default function HomeC() {
     const featuredJobs=[
 
         {id:1, title:'Frontend Developer', company:'Tech soln', location:'Dhapasi'},
@@ -14,7 +14,7 @@ export default function homeC() {
     <h2>Featured Jobs</h2>
     <div>
         {
-            featuredJobs.map((job)=>(<jobCard key={job.id} job={job}/>))
+            featuredJobs.map((job)=>(<JobCard key={job.id} job={job}/>))
         }
     </div>
 

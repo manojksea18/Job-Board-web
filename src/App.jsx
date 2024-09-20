@@ -1,6 +1,6 @@
 import React,{ useState } from 'react'
 
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter , Route, Routes } from 'react-router-dom';
 import homePage from './pages/homePage';
 
 function App() {
@@ -9,7 +9,8 @@ function App() {
     <>
       <BrowserRouter>
       <Routes>
-      <Route path="/" element={<homePage />} />
+
+      <Route path="/" Component= {homePage} />
 
       </Routes>
       

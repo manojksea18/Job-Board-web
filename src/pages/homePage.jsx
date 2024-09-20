@@ -1,11 +1,12 @@
 import React from 'react'
-import homeC from '../components/homeComponent/homeC'
+import HomeC from '../components/homeComponent/homeC'
+import Header from '../components/shareComponent/header'
 
 export default function homePage() {
   return (
     <div>
-      <header/>
-      <homeC/>
+      <Header/>
+      <HomeC/>
       <footer/>
     </div>
   )
