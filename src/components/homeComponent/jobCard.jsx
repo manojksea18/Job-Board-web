@@ -1,7 +1,7 @@
 import React from 'react'
 import {Link } from 'react-router-dom';
 
-const jobCard=({job})=> {
+const JobCard=({job})=> {
   return (
     <div>
       <h3>{job.title}</h3>
@@ -11,4 +11,4 @@ const jobCard=({job})=> {
     </div>
   )
 }
-export default jobCard;
+export default JobCard;
