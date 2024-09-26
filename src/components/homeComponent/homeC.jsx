@@ -9,20 +9,24 @@ export default function HomeC() {
 
     ]
   return (
-    <div className=' animate-bg-move min-h-screen p-8  '>
-        <source src='/9694810-hd_1920_1080_25fps.mp4' type='video/mp4'/>
-        <div className='max-w-7xl mx-auto'>
-    <h1 className='flex justify-center font-bold text-2xl bg-gradient-to-r from-purple-400  to-red-500 bg-clip-text mt-2 hover:text-orange-500 transition duration-300
+    <div className='relative w-full h-screen overflow-hidden'>
+        <video className=" h-full w-full object-cover" autoPlay muted loop>
+        <source src='/9665235-hd_1920_1080_25fps.mp4' type='video/mp4'/>
+        </video>
+
+
+        <div className='absolute inset-0 max-w-7xl mx-auto'>
+    <h1 className='flex justify-center font-bold opacity-75 text-white bg-clip-text mt-5 hover:text-orange-800 transition duration-100 text-2xl
  animate-pulse
 '>  👋 Welcome to the Job Board</h1>
-    <h2 className='flex justify-center font-semibold mt-3 text-2xl animate-bounce '>Featured Jobs</h2>
+    <h2 className='flex justify-center font-bold mt-3 text-green-700 text-2xl animate-bounce '>Featured Jobs</h2>
     <div className='grid gird-cols-1 md:grid-cols-2 '>
         {
             featuredJobs.map((job)=>(<JobCard key={job.id} job={job}/>))
         }
     </div>
-    </div>
     
+    </div>
     </div>
   )
 }
