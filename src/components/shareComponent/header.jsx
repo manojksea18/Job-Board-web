@@ -1,13 +1,38 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
+import { useState,useEffect } from 'react';
 
-const  Header=()=>{
+const  Header=({sticky,stickyColor})=>{
+    const [isSticky, setIsSticky] = useState(false);
+// const location = useLocation();
+
+useEffect(() => {
+  if (sticky) {
+    setIsSticky(true);
+  }
+}, [sticky]);
+
+useEffect(() => {
+  if (stickyColor) {
+    setIsSticky(true);
+  } else {
+    setIsSticky(false);
+  }
+}, [stickyColor]);
+
+
+
   return (
-    <div className='   bg-gradient-to-r from-black to-gray-400 mt-4 ticky top-0  shadow-lg p-1'>
+    <div
+    className={`bg-gradient-to-r from-black to-gray-400  sticky top-0 shadow-md ${
+      isSticky ? "sticky" : ""
+    } ${stickyColor ? "sticky-color" : ""}`}
+  >
+    <div className=''>
 
         <div className='logo-container '> 
         <Link to="/">
-            <img src="/logo.png" alt="logo" className="logo w-16 h-16 rounded-md flex items-center justify-center" />
+            <img src="/logo.png" alt="logo" className="logo w-12 h-12 rounded-md flex justify-items-center" />
           </Link>     
           </div>     
 
@@ -18,7 +43,7 @@ const  Header=()=>{
                     <li className='text-white font-medium hover:text-white transition duration-100 ease-in-out transform hover:scale-125'> <Link to="/candidate-dashboard">Candidate Dashboard</Link></li>
 
                 </ul>
-           
+           </div>
       
     </div>
   )
