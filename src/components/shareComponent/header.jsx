@@ -21,6 +21,11 @@ useEffect(() => {
 }, [stickyColor]);
 
 
+    const[query,setQuery]=useState('');
+    const handleSearch =()=>{
+        onSearch(query)
+
+    }
 
   return (
     <div
@@ -41,12 +46,19 @@ useEffect(() => {
                     <li className='text-white font-medium hover:text-white transition duration-100 ease-in-out transform hover:scale-125'><Link to="/jobs">Jobs</Link></li>
                     <li className='text-white font-medium hover:text-white transition duration-100 ease-in-out transform hover:scale-125'><Link to="/employer-dashboard">Employer Dashboard</Link></li>
                     <li className='text-white font-medium hover:text-white transition duration-100 ease-in-out transform hover:scale-125'> <Link to="/candidate-dashboard">Candidate Dashboard</Link></li>
-
+                    
                 </ul>
+                <input type="search" value={query} onChange={(e)=> setQuery(e.target.value)} placeholder='Search Jobs...' className='rounded-full flex items-center'/>
+                    <button onClick={handleSearch}></button>
            </div>
+           
+      
+    
+
       
     </div>
   )
 }
+
 
 export default Header;
